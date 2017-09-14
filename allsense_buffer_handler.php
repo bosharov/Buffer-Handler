@@ -5,11 +5,11 @@
 function allsense_optimize($buffer) {
 	
 	// modify buffer here, and then return the updated code
-	$buffer = str_replace (
-		'<head>',
-		'<!--///////////////////////////////// = allsense_optimize well done = ////////////////////////////////////////--><head>',
-		$buffer
-		);
+	// $buffer = str_replace (
+	//	'<head>',
+	//	'<!--///////////////////////////////// = allsense_optimize well done = ////////////////////////////////////////--><head>',
+	//	$buffer
+	//	);
 
 
 	$replace = array(
