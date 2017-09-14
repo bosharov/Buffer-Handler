@@ -13,12 +13,12 @@ function allsense_optimize($buffer) {
 
 
 	$replace = array(
-		'/<head>/'					=>	'<!--////// = allsense_optimize well done! = //////--><head>',
+		'/<head>/'			=>	'<!--////// = allsense_optimize well done! = //////--><head>',
 
 		'/<strong>(.*?)<\/strong>/'	=>	'<span class="strong">$1</span>',
-		'/<b>(.*?)<\/b>/'			=>	'<span class="strong">$1</span>',
-		'/<em>(.*?)<\/em>/'			=>	'<span class="italic">$1</span>',
-		'/<i>(.*?)<\/i>/'			=>	'<span class="italic">$1</span>',
+		'/<b>(.*?)<\/b>/'		=>	'<span class="strong">$1</span>',
+		'/<em>(.*?)<\/em>/'		=>	'<span class="italic">$1</span>',
+		'/<i>(.*?)<\/i>/'		=>	'<span class="italic">$1</span>',
 	);
 
 	foreach ( $replace as $key => $value ) {
@@ -28,7 +28,7 @@ function allsense_optimize($buffer) {
 
 	return $buffer;
 }
-function buffer_start() { ob_start("allsense_optimize"); }
+function buffer_start() { ob_start( 'allsense_optimize' ); }
 function buffer_end() { ob_end_flush(); }
 add_action('init', 'buffer_start');
 add_action('shutdown', 'buffer_end');
